@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-yellow-500;
+  font-family: "Amatic SC", cursive;
+}
+
+.wrapper {
+  width: 800px;
+}
