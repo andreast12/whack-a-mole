@@ -34,7 +34,7 @@ for (const i in numberOfHoles) {
 }
 
 let running = false;
-let previousNumber;
+let previousNumber = null;
 
 function randomNumber(min, max) {
   // max is exclusive
@@ -42,11 +42,12 @@ function randomNumber(min, max) {
 }
 
 function showMole() {
-  let number = randomNumber(0, numberOfHoles);
+  let number;
   // Keep generating until get a new number
-  while (number === previousNumber) {
+  do {
     number = randomNumber(0, numberOfHoles);
-  }
+  } while (number === previousNumber);
+
   appear.value[number] = true;
   previousNumber = number;
   setTimeout(() => {
